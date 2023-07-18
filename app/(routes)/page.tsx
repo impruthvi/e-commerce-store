@@ -1,8 +1,18 @@
-const HomePage = () => {
+import getBillboard from "@/actions/get-billboard";
+import Billboard from "@/components/billboard";
+import Container from "@/components/ui/container";
+
+export const relative = 0;
+
+const HomePage = async () => {
+  const billboard = await getBillboard(process.env.NEXT_PUBLIC_BILLBOARD_ID!);
+
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <Container>
+      <div className="space-y-10 pb-10">
+        <Billboard data={billboard} />
+      </div>
+    </Container>
   );
 };
 export default HomePage;
