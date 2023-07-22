@@ -1,6 +1,3 @@
-"use client";
-
-import { toast } from "react-hot-toast";
 import Image from "next/image";
 import { X } from "lucide-react";
 
